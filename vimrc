@@ -20,9 +20,27 @@ set number          " show line numbers
 set t_BE=           " turn off bracketed paste mode. 
                     " prevents appending 0~ and 1~ to the beginning and end of pasted text in terminator.
 
-colorscheme default  " Use default color scheme
-
-" show whitespace
+" show tabs
 set list
 set listchars=tab:>-,trail:-,nbsp:%,extends:>,precedes:<
 
+" tab complete options
+set wildmode=longest,full
+set wildmenu
+
+" plugins
+call plug#begin('~/.vim/plugged')
+"    Plug 'https://github.com/jiangmiao/auto-pairs'
+    Plug 'https://github.com/altercation/vim-colors-solarized.git'
+    Plug 'https://github.com/rafi/awesome-vim-colorschemes.git'
+    Plug 'https://github.com/widatama/vim-phoenix.git'
+"    Plug 'https://github.com/Dru89/vim-adventurous'
+"    Plug 'https://github.com/Siphalor/vim-atomified'
+call plug#end()
+
+syntax enable
+set background=dark
+colorscheme solarized
+" colorscheme meta5
+" colorscheme molokai
+" colorscheme phoenix
