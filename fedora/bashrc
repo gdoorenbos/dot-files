@@ -60,12 +60,16 @@ else
 
 fi
 
+# path additions
+PATH="${PATH}:/home/gdoorenb/.cargo/bin"
+
 # aliases
+alias cat="bat"
+alias ping="prettyping --nolegend"
 alias p4_setup="export P4USER=gdoorenb && \
                 export P4PORT=p4gwdedge.adtran.com:1667 && \
                 export P4EDITOR=vim && \
                 export P4DIFF=diffuse"
-
 alias p4_rolt="cd /home/gdoorenb/p4/gwdedge/repon_olt-main/osa_ne_olt && \
                export P4CLIENT=gdoorenb_repon_olt_fh && \
                p4_setup"
