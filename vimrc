@@ -28,19 +28,30 @@ set listchars=tab:>-,trail:-,nbsp:%,extends:>,precedes:<
 set wildmode=longest,full
 set wildmenu
 
+" enable searching for visually selected text with //
+vnoremap // y/<C-R>"<CR>
+
+" set syntax for .bats files
+au BufRead,BufNewFile *.bats setfiletype sh
+
 " plugins
 call plug#begin('~/.vim/plugged')
 "    Plug 'https://github.com/jiangmiao/auto-pairs'
     Plug 'https://github.com/altercation/vim-colors-solarized.git'
     Plug 'https://github.com/rafi/awesome-vim-colorschemes.git'
     Plug 'https://github.com/widatama/vim-phoenix.git'
+    Plug 'https://github.com/tokers/magellan'
 "    Plug 'https://github.com/Dru89/vim-adventurous'
 "    Plug 'https://github.com/Siphalor/vim-atomified'
 call plug#end()
 
 syntax enable
-set background=dark
-colorscheme solarized
-" colorscheme meta5
-" colorscheme molokai
-" colorscheme phoenix
+"set background=light
+"set background=dark
+"colorscheme default
+colorscheme gd-cool
+"colorscheme phoenix
+"colorscheme solarized
+"colorscheme meta5
+"colorscheme molokai
+"colorscheme phoenix
