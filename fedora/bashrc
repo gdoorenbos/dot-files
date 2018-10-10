@@ -73,6 +73,15 @@ alias p4_setup="export P4USER=gdoorenb && \
 alias p4_rolt="cd /home/gdoorenb/p4/gwdedge/repon_olt-main/osa_ne_olt && \
                export P4CLIENT=gdoorenb_repon_olt_fh && \
                p4_setup"
+alias p4_dpu="cd /home/gdoorenb/p4/gwdedge/dpu-main/mosaic_os_dpu && \
+              export P4CLIENT=gdoorenb_dpu_main_fh && \
+              p4_setup"
+alias p4_onu="cd /home/gdoorenb/p4/gwdedge/onu-main/mosaic_os_onu && \
+              export P4CLIENT=gdoorenb_onu_main_fh && \
+              p4_setup"
 
-
-
+PATH="/home/gdoorenb/perl5/bin${PATH:+:${PATH}}"; export PATH;
+PERL5LIB="/home/gdoorenb/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
+PERL_LOCAL_LIB_ROOT="/home/gdoorenb/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
+PERL_MB_OPT="--install_base \"/home/gdoorenb/perl5\""; export PERL_MB_OPT;
+PERL_MM_OPT="INSTALL_BASE=/home/gdoorenb/perl5"; export PERL_MM_OPT;
