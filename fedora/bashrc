@@ -66,20 +66,38 @@ PATH="${PATH}:/home/gdoorenb/.cargo/bin"
 # aliases
 alias cat="bat"
 alias ping="prettyping --nolegend"
-alias p4_setup="export P4USER=gdoorenb && \
-                export P4PORT=p4gwdedge.adtran.com:1667 && \
-                export P4EDITOR=vim && \
-                export P4DIFF=diffuse"
+alias p4_base="export P4USER=gdoorenb && \
+               export P4IGNORE=$HOME/.p4ignore && \
+               export P4EDITOR=vim && \
+               export P4DIFF=diffuse"
+alias p4_gwd_setup="p4_base && export P4PORT=p4gwdedge.adtran.com:1667"
+alias p4_cn_setup="p4_base && export P4PORT=p4-cn-srv.adtran.com:1666"
+alias p4_en_setup="p4_base && export P4PORT=p4-en-srv.adtran.com:1666"
 alias p4_rolt="cd /home/gdoorenb/p4/gwdedge/repon_olt-main/osa_ne_olt && \
                export P4CLIENT=gdoorenb_repon_olt_fh && \
-               p4_setup"
+               p4_gwd_setup"
 alias p4_dpu="cd /home/gdoorenb/p4/gwdedge/dpu-main/mosaic_os_dpu && \
               export P4CLIENT=gdoorenb_dpu_main_fh && \
-              p4_setup"
+              p4_gwd_setup"
 alias p4_onu="cd /home/gdoorenb/p4/gwdedge/onu-main/mosaic_os_onu && \
               export P4CLIENT=gdoorenb_onu_main_fh && \
-              p4_setup"
+              p4_gwd_setup"
+alias p4_en_aos="cd /home/gdoorenb/p4/en && \
+                 export P4CLIENT=gdoorenb-fedora-en-aos && \
+                 p4_en_setup"
+alias p4_package="cd /home/gdoorenb/p4/cn/package && \
+                  export P4CLIENT=gdoorenb_package_fh && \
+                  p4_cn_setup"
 
+alias p4_opened_cls="p4 opened | awk '{print \$5}' | sort -u"
+p4_reshelve () {
+    local -r changelist="$1";
+    p4 shelve -dc "$changelist"
+    p4 shelve -fc "$changelist"
+}
+export -f p4_reshelve
+
+export EDITOR=vim
 PATH="/home/gdoorenb/perl5/bin${PATH:+:${PATH}}"; export PATH;
 PERL5LIB="/home/gdoorenb/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
 PERL_LOCAL_LIB_ROOT="/home/gdoorenb/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
