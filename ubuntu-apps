@@ -3,5 +3,8 @@ diffuse
 firefox
 git
 openconnect
+openssh-client
+openssh-server
 tmux
 vim
+virtualenv
