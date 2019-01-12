@@ -34,7 +34,11 @@ vnoremap // y/<C-R>"<CR>
 " set syntax for .bats files
 au BufRead,BufNewFile *.bats setfiletype sh
 
-" plugins
+" plugins (https://github.com/junegunn/vim-plug)
+if empty(glob('~/.vim/autoload/plug.vim'))
+    silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+    autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
 call plug#begin('~/.vim/plugged')
 "    Plug 'https://github.com/jiangmiao/auto-pairs'
     Plug 'https://github.com/altercation/vim-colors-solarized.git'
@@ -49,9 +53,9 @@ syntax enable
 "set background=light
 "set background=dark
 "colorscheme default
-colorscheme gd-cool
-"colorscheme phoenix
-"colorscheme solarized
+"colorscheme gd-cool
+colorscheme magellan
 "colorscheme meta5
 "colorscheme molokai
 "colorscheme phoenix
+"colorscheme solarized
