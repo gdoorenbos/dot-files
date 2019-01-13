@@ -1,2 +1,4 @@
 alias adtran-vpn='sudo openconnect -b -l -u gdoorenb --juniper vpn.adtran.com'
 alias adtran-vpn-disconnect='sudo pkill openconnect'
+
+alias grep='grep --color=auto'
