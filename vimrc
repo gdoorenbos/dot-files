@@ -20,13 +20,16 @@ set number          " show line numbers
 set t_BE=           " turn off bracketed paste mode. 
                     " prevents appending 0~ and 1~ to the beginning and end of pasted text in terminator.
 
-" show tabs
+" show tabs and other whitespace characters
 set list
 set listchars=tab:>-,trail:-,nbsp:%,extends:>,precedes:<
 
 " tab complete options
 set wildmode=longest,full
 set wildmenu
+
+" highlight searches
+set hlsearch
 
 " enable searching for visually selected text with //
 vnoremap // y/<C-R>"<CR>
