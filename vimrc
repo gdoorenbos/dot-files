@@ -34,15 +34,32 @@ set hlsearch
 " enable searching for visually selected text with //
 vnoremap // y/<C-R>"<CR>
 
+" disable bell sounds
+set noerrorbells novisualbell t_vb=
+
 " set syntax for .bats files
-au BufRead,BufNewFile *.bats setfiletype sh
+autocmd BufRead,BufNewFile *.bats setfiletype sh
 
 " plugins (https://github.com/junegunn/vim-plug)
-if empty(glob('~/.vim/autoload/plug.vim'))
-    silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-    autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+if has('unix')
+    let vim_plugged_vimfile = '~/.vim/autoload/plug.vim'
+    let vim_plugged_dir = '~/.vim/plugged'
+else
+    let vim_plugged_vimfile = '~\vimfiles\autoload\plug.vim'
+    let vim_plugged_dir = '~\vimfiles\plugged'
+    set shell=powershell
+    set shellcmdflag=-command
 endif
-call plug#begin('~/.vim/plugged')
+if empty(glob(vim_plugged_vimfile))
+    if has('unix')
+        silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+    else
+        silent !md '~\vimfiles\autoload'
+        silent !Invoke-WebRequest -Uri 'https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim' -OutFile '~\vimfiles\autoload\plug.vim'
+    endif
+    autocmd VimEnter,GUIEnter * PlugInstall --sync | source $MYVIMRC
+endif
+call plug#begin(vim_plugged_dir)
 "    Plug 'https://github.com/jiangmiao/auto-pairs'
     Plug 'https://github.com/altercation/vim-colors-solarized.git'
     Plug 'https://github.com/rafi/awesome-vim-colorschemes.git'
@@ -51,13 +68,14 @@ call plug#begin('~/.vim/plugged')
 "    Plug 'https://github.com/Dru89/vim-adventurous'
 "    Plug 'https://github.com/Siphalor/vim-atomified'
 call plug#end()
+" end plugins
 
 syntax enable
 "set background=light
 "set background=dark
 "colorscheme default
 "colorscheme gd-cool
-colorscheme magellan
+silent! colorscheme magellan
 "colorscheme meta5
 "colorscheme molokai
 "colorscheme phoenix
