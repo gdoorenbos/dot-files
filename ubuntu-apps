@@ -2,6 +2,7 @@ curl
 diffuse
 firefox
 git
+net-tools
 openconnect
 openssh-client
 openssh-server
