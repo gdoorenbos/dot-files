@@ -1,5 +1,5 @@
 #!/bin/bash
 
 apt-get update && \
-apt-get upgrade --yes && \
+apt-get upgrade --yes --fix-broken && \
 apt-get autoremove --yes
