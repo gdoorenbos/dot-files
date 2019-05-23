@@ -60,23 +60,26 @@ if empty(glob(vim_plugged_vimfile))
     autocmd VimEnter,GUIEnter * PlugInstall --sync | source $MYVIMRC
 endif
 call plug#begin(vim_plugged_dir)
-"    Plug 'https://github.com/jiangmiao/auto-pairs'
     Plug 'https://github.com/altercation/vim-colors-solarized.git'
     Plug 'https://github.com/rafi/awesome-vim-colorschemes.git'
     Plug 'https://github.com/widatama/vim-phoenix.git'
     Plug 'https://github.com/tokers/magellan'
-"    Plug 'https://github.com/Dru89/vim-adventurous'
-"    Plug 'https://github.com/Siphalor/vim-atomified'
+    Plug 'https://github.com/ctrlpvim/ctrlp.vim.git'
 call plug#end()
 " end plugins
 
+" color scheme
 syntax enable
-"set background=light
-"set background=dark
-"colorscheme default
-"colorscheme gd-cool
 silent! colorscheme magellan
-"colorscheme meta5
-"colorscheme molokai
-"colorscheme phoenix
-"colorscheme solarized
+
+" powerline
+python3 from powerline.vim import setup as powerline_setup
+python3 powerline_setup()
+python3 del powerline_setup
+set laststatus=2
+
+" CtrlP: open file in new tab on <CR>
+let g:ctrlp_prompt_mappings = {
+    \ 'AcceptSelection("e")': ['<2-LeftMouse>'],
+    \ 'AcceptSelection("t")': ['<cr>'],
+    \ }
