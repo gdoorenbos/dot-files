@@ -82,6 +82,6 @@ set laststatus=2
 
 " CtrlP: open file in new tab on <CR>
 let g:ctrlp_prompt_mappings = {
-    \ 'AcceptSelection("e")': ['<2-LeftMouse>'],
-    \ 'AcceptSelection("t")': ['<cr>'],
+    \ 'AcceptSelection("e")': ['<c-t>'],
+    \ 'AcceptSelection("t")': ['<cr>', '<2-LeftMouse>'],
     \ }
