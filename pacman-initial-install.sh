@@ -6,6 +6,8 @@ pacman -S --needed \
     diff-so-fancy \
     gdb \
     git \
+    iputils \
+    net-tools \
     tmux \
     vim \
     xclip
