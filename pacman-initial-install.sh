@@ -8,6 +8,9 @@ pacman -S --needed \
     git \
     iputils \
     net-tools \
+    picocom \
+    powerline \
+    powerline-fonts \
     tmux \
     vim \
     xclip
