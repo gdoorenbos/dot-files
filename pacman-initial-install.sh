@@ -6,11 +6,11 @@ pacman -S --needed \
     diff-so-fancy \
     gdb \
     git \
+    gvim \
     iputils \
     net-tools \
     picocom \
     powerline \
     powerline-fonts \
     tmux \
-    vim \
     xclip
