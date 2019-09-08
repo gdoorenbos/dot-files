@@ -1,3 +1,5 @@
-# run sudo visudo, then append the following line
+# first make sure vim is the default system editor
+sudo update-alternatives --config editor
 
+# run sudo visudo, then append the following line
 username     ALL=(ALL) NOPASSWD:ALL
