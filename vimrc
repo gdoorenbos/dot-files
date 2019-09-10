@@ -40,6 +40,9 @@ set noerrorbells novisualbell t_vb=
 " set syntax for .bats files
 autocmd BufRead,BufNewFile *.bats setfiletype sh
 
+" organize swap files into their own directory
+set directory^=$HOME/.vim/tmp//
+
 " plugins (https://github.com/junegunn/vim-plug)
 if has('unix')
     let vim_plugged_vimfile = '~/.vim/autoload/plug.vim'
