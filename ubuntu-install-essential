@@ -1,5 +1,5 @@
 #!/bin/bash
-set -u
+set -eu
 
 declare -gar apps=(
 curl
@@ -9,10 +9,13 @@ git
 gnome-tweak-tool
 libcanberra-gtk-module
 libcanberra-gtk3-module
+mtd-utils
 net-tools
 openconnect
 openssh-client
 openssh-server
+tftp-hpa
+tftpd-hpa
 tmux
 vim
 virtualenv
@@ -21,3 +24,8 @@ xclip
 
 echo "Installing apps: ${apps[@]}"
 apt-get update && apt-get install --yes "${apps[@]}"
+
+echo "Enabling and starting services"
+ln -sf /var/lib/tftpboot/ /tftpboot
+systemctl enable tftpd-hpa
+systemctl start  tftpd-hpa
