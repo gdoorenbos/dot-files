@@ -1,4 +1,11 @@
+export EDITOR=vim
+export POWERLINE_CONF=$(find /usr/share/powerline -name powerline.conf)
+
 alias adtran-vpn='sudo openconnect -b -l -u gdoorenb --juniper vpn.adtran.com'
 alias adtran-vpn-disconnect='sudo pkill openconnect'
 
 alias grep='grep --color=auto'
+
+# not an alias, but create directory for vim swap files
+# make sure this stays in sync with vimrc
+mkdir -p "$HOME/.vim/tmp"

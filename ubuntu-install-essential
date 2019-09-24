@@ -5,6 +5,7 @@ declare -gar apps=(
 curl
 diffuse
 firefox
+fonts-powerline
 git
 gnome-tweak-tool
 libcanberra-gtk-module
@@ -16,6 +17,9 @@ openssh-client
 openssh-server
 tftp-hpa
 tftpd-hpa
+powerline
+python3
+python3-pip
 tmux
 vim
 virtualenv
@@ -24,6 +28,9 @@ xclip
 
 echo "Installing apps: ${apps[@]}"
 apt-get update && apt-get install --yes "${apps[@]}"
+
+echo "Installing vscode..."
+snap install --classic code
 
 echo "Enabling and starting services"
 ln -sf /var/lib/tftpboot/ /tftpboot
