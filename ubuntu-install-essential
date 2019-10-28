@@ -23,7 +23,7 @@ python3-pip
 tftp-hpa
 tftpd-hpa
 tmux
-vim
+vim-gtk
 virtualenv
 xclip
 )
