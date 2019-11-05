@@ -2,6 +2,7 @@
 set -eu
 
 declare -gar apps=(
+adobe-flashplugin
 curl
 diffuse
 firefox
