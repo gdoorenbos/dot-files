@@ -1,5 +1,7 @@
 #!/bin/bash
+set -e
 
-apt-get update && \
-apt-get upgrade --yes && \
-apt-get autoremove --yes
+apt update
+apt upgrade --yes --fix-broken
+apt dist-upgrade --yes
+apt autoremove --yes
