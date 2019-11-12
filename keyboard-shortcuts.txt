@@ -1,0 +1,18 @@
+Alt-F: move forward one word
+Alt-B: move backward one word
+Ctrl-U: delete all before cursor
+Ctrl-K: delete all after cursor
+Ctrl-W: delete previous word
+Ctrl-V: paste
+!!: last command
+less +F (instead of tail)
+Ctrl-x-e: continue editing command in editor
+Alt-.: paste last word of previous command
+reset: unbork terminal
+
+vim:
+di(: delete everything within parens
+ci(: replace everything within parens
+da(: delete everything within and including parens
+ca(: replace evertyhing within and including parens
+( can be replace with " or ' for quotes
