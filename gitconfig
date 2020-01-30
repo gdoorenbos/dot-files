@@ -1,0 +1,6 @@
+[user]
+	name = Garrett Doorenbos
+[diff]
+	tool = diffuse
+[difftool]
+	prompt = false
