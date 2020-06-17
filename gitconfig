@@ -1,6 +1,16 @@
 [user]
-	name = Garrett Doorenbos
+    name = Garrett Doorenbos
 [diff]
-	tool = diffuse
+    tool = meld
 [difftool]
-	prompt = false
+    prompt = false
+[difftool "meld"]
+    cmd = meld "$REMOTE" "$LOCAL"
+[merge]
+    tool = meld
+[mergetool "meld"]
+    # Choose one of these 2 lines (not both!)
+    cmd = meld "$REMOTE" "$MERGED" "$LOCAL"
+    #cmd = meld "$REMOTE" "$BASE"   "$LOCAL"
+[credential]
+    helper = cache --timeout=3600
