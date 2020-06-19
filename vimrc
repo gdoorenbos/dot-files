@@ -78,6 +78,7 @@ call plug#end()
 " color scheme
 syntax enable
 silent! colorscheme magellan
+highlight SpecialKey ctermfg=238
 
 " powerline
 if has('python3') && ! has('gui_running')
