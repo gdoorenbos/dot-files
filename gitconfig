@@ -5,12 +5,12 @@
 [difftool]
     prompt = false
 [difftool "meld"]
-    cmd = meld "$REMOTE" "$LOCAL"
+    cmd = meld "$LOCAL" "$REMOTE"
 [merge]
     tool = meld
 [mergetool "meld"]
     # Choose one of these 2 lines (not both!)
-    cmd = meld "$REMOTE" "$MERGED" "$LOCAL"
-    #cmd = meld "$REMOTE" "$BASE"   "$LOCAL"
+    cmd = meld "$LOCAL" "$MERGED" "$REMOTE"
+    #cmd = meld "$LOCAL" "$BASE" "$REMOTE"
 [credential]
     helper = cache --timeout=3600
