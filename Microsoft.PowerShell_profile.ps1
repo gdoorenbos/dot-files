@@ -1,3 +1,11 @@
+# Adding a profile:
+# * Check for profile:
+#     Test-Item $profile
+# * If false, create it:
+#     New-item –type file –force $profile
+# * Enable running scripts:
+#     Set-ExecutionPolicy RemoteSigned
+
 # Add color to the prompt
 # Uses ANSI escape codes
 function prompt  
